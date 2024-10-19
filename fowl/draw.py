@@ -5,3 +5,6 @@ def get_color(r, g, b, a = 255):
 
 def draw_rect(x, y, w, h, col):
     pr.draw_rectangle(x, y, w, h, col)
+
+def draw_text(x, y, text, size, color):
+    pr.draw_text(text, x, y, size, color)

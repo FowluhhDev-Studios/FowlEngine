@@ -1,8 +1,6 @@
 from fowl import init, keys, draw
 from fowl.scene import scene, manager
 
-import pyray as pr
-
 # Constants
 WIDTH = 640
 HEIGHT = 480
@@ -15,7 +13,6 @@ class TestScene(scene.Scene):
         return super().init()
     
     def draw(self):
-        # pr.draw_text("Hello", 5, 5, 20, pr.BLUE)
         draw.draw_rect(10, 10, 50, 50, draw.get_color(100, 120, 140, 50))
         return super().draw()
     
