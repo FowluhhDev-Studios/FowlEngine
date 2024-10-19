@@ -10,3 +10,4 @@ def get_key_down(key):
 
 def get_key_up(key):
     return pr.is_key_up(key)
+

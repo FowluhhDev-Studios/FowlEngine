@@ -1,4 +1,4 @@
-from fowl import init, keys, draw
+from fowl import init, input, draw
 from fowl.scene import scene, manager
 
 # Constants
@@ -11,17 +11,16 @@ class TestScene(scene.Scene):
     def init(self):
         print("Hello, TestScene!")
         self.image = draw.get_image("image.png")
+        self.imagesize = 0.5
         self.texture = draw.get_texture(self.image)
-        self.offx = 10
-        self.offy = 10
+        self.text = "Hello, FowlEngine!"
+        self.textsize = 32
+        self.font = draw.get_font("assets/font.fnt")
         return super().init()
     
     def draw(self):
-        draw.draw_texture(draw.find_center(WIDTH, self.image.width), draw.find_center(HEIGHT, self.image.height), self.texture)
-        #draw.draw_rect(10, 10, 50, 50, draw.get_color(255, 255, 255))
-        #draw.draw_rect(draw.anchor(WIDTH, 50, self.offx), 10, 50, 50, draw.get_color(255, 255, 255))
-        #draw.draw_rect(10, draw.anchor(HEIGHT, 50, self.offy), 50, 50, draw.get_color(255, 255, 255))
-        #draw.draw_rect(draw.anchor(WIDTH, 50, self.offx), draw.anchor(HEIGHT, 50, self.offy), 50, 50, draw.get_color(255, 255, 255))
+        draw.draw_texture(draw.find_center(WIDTH, self.image.width*self.imagesize), draw.find_center(HEIGHT, self.image.height*self.imagesize) - 32, self.texture, self.imagesize)
+        draw.draw_text(draw.find_text_center(self.font, self.text, self.textsize), draw.find_center(HEIGHT, 24)+48, self.text, self.font, self.textsize)
         return super().draw()
     
     def update(self):

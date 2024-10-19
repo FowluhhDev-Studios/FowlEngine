@@ -7,5 +7,8 @@ def init(width: int, height: int, fps: int, title: str):
 def can_draw():
     return not pr.window_should_close()
 
+def get_fps():
+    return pr.get_fps()
+
 def exit():
     pr.close_window()
