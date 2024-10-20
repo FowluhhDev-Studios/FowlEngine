@@ -7,13 +7,14 @@ HEIGHT = 480
 FPS = 60
 
 class LogoObject(object.Object):
-    def __init__(self):
-        self.image = draw.get_image("assets/image.png")
+    def __init__(self, image):
+        self.image = draw.get_image("assets/%s.png" %image)
+        self.rot = 0
         self.imagesize = 0.5
         self.texture = draw.get_texture(self.image)
     
     def draw(self):
-        draw.draw_texture(draw.find_center(WIDTH, self.image.width*self.imagesize), draw.find_center(HEIGHT, self.image.height*self.imagesize) - 32, self.texture, self.imagesize)
+        draw.draw_texture(draw.find_center(WIDTH, self.image.width*self.imagesize), draw.find_center(HEIGHT, self.image.height*self.imagesize) - 32, self.texture, self.imagesize, self.rot)
         return super().draw()
 
 # Classes
@@ -23,7 +24,9 @@ class TestScene(scene.Scene):
         self.text = "Hello, FowlEngine!"
         self.textsize = 32
         self.font = draw.get_font("assets/font.fnt")
-        self.logo = LogoObject()
+        self.iname = "image"
+        self.logo = LogoObject(self.iname)
+        self.is_next = False
         return super().init()
     
     def draw(self):
@@ -32,6 +35,21 @@ class TestScene(scene.Scene):
         return super().draw()
     
     def update(self):
+        if input.get_key(input.keys.KEY_SPACE):
+            self.is_next = not self.is_next
+            if self.is_next:
+                self.text = "Use this template to make your game!"
+                self.textsize = 24
+                self.iname = "image2"
+                self.logo = LogoObject(self.iname)
+                self.manager.change_bg(draw.get_color(255, 127, 0))
+            else:
+                self.text = "Hello, FowlEngine!"
+                self.textsize = 32
+                self.iname = "image"
+                self.logo = LogoObject(self.iname)
+                self.manager.change_bg(draw.get_color(127, 0, 255))
+        
         return super().update()
 
 # Variables

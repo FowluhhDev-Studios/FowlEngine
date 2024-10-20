@@ -1,5 +1,3 @@
-# FowlEngine
-
 2D Game Framework for Everyone.
 
 ## Using FowlEngine
