@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-<div style="text-align: center;"><img src="./logo.png"><p>2D Game Framework for Everyone.</p></div>
-=======
-![logo]()
-
-<div style="text-align: center;">
+![alt text](logo.png)
 2D Game Framework for Everyone.
-</div>
->>>>>>> 38f6e23544ac302fa20dba03f18ad10889950678
 
 ## Using FowlEngine
 
