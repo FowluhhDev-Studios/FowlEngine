@@ -1,5 +1,4 @@
 ![alt text](logo.png)
-2D Game Framework for Everyone.
 
 ## Using FowlEngine
 
