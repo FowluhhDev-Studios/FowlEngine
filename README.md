@@ -1,4 +1,4 @@
-2D Game Framework for Everyone.
+<div style="text-align: center;"><img src="./logo.png"><p>2D Game Framework for Everyone.</p></div>
 
 ## Using FowlEngine
 
