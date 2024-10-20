@@ -7,10 +7,13 @@ def find_center(first, second):
     return int((first / 2) - (second / 2))
 
 def anchor(scr_size, obj_size, offset, direction = -1):
-    return int(scr_size + ((obj_size+offset)*-1))
+    return int(scr_size + ((obj_size+offset)*direction))
 
 def draw_rect(x, y, w, h, col):
     pr.draw_rectangle(x, y, w, h, col)
+
+def draw_circle(x, y, radius, col):
+    pr.draw_circle(x, y, radius, col)
 
 def get_font(file_name):
     return pr.load_font(file_name)

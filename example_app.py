@@ -1,4 +1,4 @@
-from fowl import init, input, draw, object
+from fowl import init, input, draw, object, audio
 from fowl.scene import scene, manager
 
 # Constants
@@ -27,6 +27,8 @@ class TestScene(scene.Scene):
         self.iname = "image"
         self.logo = LogoObject(self.iname)
         self.is_next = False
+        self.music = audio.load_music("assets/music.mp3")
+        audio.play_music(self.music)
         return super().init()
     
     def draw(self):
@@ -35,7 +37,8 @@ class TestScene(scene.Scene):
         return super().draw()
     
     def update(self):
-        if input.get_key(input.keys.KEY_SPACE):
+        audio.update_music(self.music)
+        if input.get_key(input.keys.KEY_SPACE) or input.get_gamepad_button(input.gamepad_buttons.GAMEPAD_BUTTON_RIGHT_FACE_DOWN) or input.get_mouse(input.mouse.MOUSE_BUTTON_LEFT):
             self.is_next = not self.is_next
             if self.is_next:
                 self.text = "Use this template to make your game!"

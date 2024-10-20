@@ -2,6 +2,7 @@ import pyray as pr
 
 def init(width: int, height: int, fps: int, title: str):
     pr.init_window(width, height, title)
+    pr.init_audio_device()
     pr.set_target_fps(fps)
 
 def can_draw():
@@ -11,4 +12,5 @@ def get_fps():
     return pr.get_fps()
 
 def exit():
+    pr.close_audio_device()
     pr.close_window()

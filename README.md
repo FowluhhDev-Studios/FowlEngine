@@ -9,15 +9,15 @@ If you want to make your own game, then look around in the "fowl" folder and loo
 ## To-do
 
 - [x] Window Initialization
-- [ ] Drawing
+- [x] Drawing
     - [x] Images
-    - [ ] Shapes
+    - [x] Shapes
     - [x] Anchoring
-- [ ] Input
+- [x] Input
     - [x] Keyboard
-    - [ ] Mouse
-    - [ ] Gamepad
+    - [x] Mouse
+    - [x] Gamepad
 - [x] Scene System and Management
-- [ ] Audio
-- [ ] Collisions
+- [x] Audio
+- [x] Collisions
 
