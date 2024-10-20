@@ -1,6 +1,8 @@
 ![logo]()
 
-<p style="text-align: center;">2D Game Framework for Everyone.</p>
+<div style="text-align: center;">
+2D Game Framework for Everyone.
+</div>
 
 ## Using FowlEngine
 
