@@ -6,18 +6,9 @@ You can just clone the repo as it serves as the source and a template with the e
 
 If you want to make your own game, then look around in the "fowl" folder and look in each file as there is no documentation as of now.
 
-## To-do
+## Changelog
 
-- [x] Window Initialization
-- [x] Drawing
-    - [x] Images
-    - [x] Shapes
-    - [x] Anchoring
-- [x] Input
-    - [x] Keyboard
-    - [x] Mouse
-    - [x] Gamepad
-- [x] Scene System and Management
-- [x] Audio
-- [x] Collisions
+v1.0.1 - Added getting gamepad axis values.
+
+v1.0 - Added core features (Init, Graphics, Input, Scenes & SceneManager, Collision, Audio)
 

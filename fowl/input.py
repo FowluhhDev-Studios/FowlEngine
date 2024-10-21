@@ -31,3 +31,6 @@ def get_gamepad_button_down(gamepadbutton, id = 0):
 
 def get_gamepad_button_up(gamepadbutton, id = 0):
     return pr.is_gamepad_button_up(id, gamepadbutton)
+
+def get_gamepad_axis(axis, id = 0):
+    return pr.get_gamepad_axis_movement(id, axis)
