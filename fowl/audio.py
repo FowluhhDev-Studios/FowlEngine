@@ -23,3 +23,6 @@ def stop_music(music):
 
 def play_sound(sound):
     pr.play_sound(sound)
+
+def stop_sound(sound):
+    pr.stop_sound(sound)

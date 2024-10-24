@@ -10,11 +10,12 @@ class LogoObject(object.Object):
     def __init__(self, image):
         self.image = draw.get_image("assets/%s.png" %image)
         self.rot = 0
+        self.id = 0
         self.imagesize = 0.5
         self.texture = draw.get_texture(self.image)
     
     def draw(self):
-        draw.draw_texture(draw.find_center(WIDTH, self.image.width*self.imagesize), draw.find_center(HEIGHT, self.image.height*self.imagesize) - 32, self.texture, self.imagesize, self.rot)
+        draw.draw_atlas_texture(draw.find_center(WIDTH, self.image.width*self.imagesize), draw.find_center(HEIGHT, (self.image.height/2)*self.imagesize) - 32, 0, self.texture.width*self.id, self.texture.width, self.texture.height / 2, self.texture, (self.imagesize, self.imagesize), self.rot)
         return super().draw()
 
 # Classes
@@ -24,7 +25,7 @@ class TestScene(scene.Scene):
         self.text = "Hello, FowlEngine!"
         self.textsize = 32
         self.font = draw.get_font("assets/font.fnt")
-        self.iname = "image"
+        self.iname = "images"
         self.logo = LogoObject(self.iname)
         self.is_next = False
         self.music = audio.load_music("assets/music.mp3")
@@ -43,14 +44,12 @@ class TestScene(scene.Scene):
             if self.is_next:
                 self.text = "Use this template to make your game!"
                 self.textsize = 24
-                self.iname = "image2"
-                self.logo = LogoObject(self.iname)
+                self.logo.id = 1
                 self.manager.change_bg(draw.get_color(255, 127, 0))
             else:
                 self.text = "Hello, FowlEngine!"
                 self.textsize = 32
-                self.iname = "image"
-                self.logo = LogoObject(self.iname)
+                self.logo.id = 0
                 self.manager.change_bg(draw.get_color(127, 0, 255))
         
         return super().update()

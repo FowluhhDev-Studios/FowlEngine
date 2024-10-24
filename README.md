@@ -8,7 +8,9 @@ If you want to make your own game, then look around in the "fowl" folder and loo
 
 ## Changelog
 
-v1.0.1 - Added getting gamepad axis values.
+v1.1 - Added atlases and fixed drawing textures, and added the ability to stop sounds
+
+v1.0.1 - Added getting gamepad axis values
 
 v1.0 - Added core features (Init, Graphics, Input, Scenes & SceneManager, Collision, Audio)
 

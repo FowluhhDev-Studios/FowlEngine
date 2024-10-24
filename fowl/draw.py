@@ -30,5 +30,8 @@ def get_image(file_name):
 def get_texture(image):
     return pr.load_texture_from_image(image)
 
-def draw_texture(x, y, texture, size = 1, rot = 0, tint = get_color(255, 255, 255)):
-    pr.draw_texture_ex(texture, pr.Vector2(x, y), rot, size, tint)
+def draw_texture(x, y, texture, size: tuple[float, float], rot = 0, tint = get_color(255, 255, 255)):
+    pr.draw_texture_pro(texture, pr.Rectangle(0, 0, texture.width, texture.height), pr.Rectangle(x, y, texture.width*size[0], texture.height*size[1]), pr.Vector2(0, 0), rot, tint)
+
+def draw_atlas_texture(dest_x, dest_y, atlas_x, atlas_y, atlas_w, atlas_h, texture, size: tuple[float, float], rot = 0, tint = get_color(255, 255, 255)):
+    pr.draw_texture_pro(texture, pr.Rectangle(atlas_x, atlas_y, atlas_w, atlas_h), pr.Rectangle(dest_x, dest_y, atlas_w*size[0], atlas_h*size[1]), pr.Vector2(0, 0), rot, tint)
